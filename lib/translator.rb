@@ -22,20 +22,20 @@ emote_file = YAML.load_file(file_path)
   translator
 end
 
-# def get_japanese_emoticon(file_path, emoticon)
-#   emote_file = YAML.load_file(file_path)
-#   emote_translation = load_library(file_path)[:get_emoticon][emoticon]
-#   if !emote_translation
-#     return "Sorry, that emoticon was not found"
-#   else
-#     emote_translation
-#   end
-# end
-
-def get_japanese_emoticon(file_path, emoticon = "Sorry, that emoticon was not found")
+def get_japanese_emoticon(file_path, emoticon)
   emote_file = YAML.load_file(file_path)
-  load_library(file_path)[:get_emoticon][emoticon]
+  emote_translation = load_library(file_path)[:get_emoticon][emoticon]
+  if !emote_translation
+    return "Sorry, that emoticon was not found"
+  else
+    emote_translation
+  end
 end
+
+# def get_japanese_emoticon(file_path, emoticon = "Sorry, that emoticon was not found")
+#   emote_file = YAML.load_file(file_path)
+#   load_library(file_path)[:get_emoticon][emoticon]
+# end
 
 # :get_emoticon=>
 #   {"O:)"=>"☜(⌒▽⌒)☞",
