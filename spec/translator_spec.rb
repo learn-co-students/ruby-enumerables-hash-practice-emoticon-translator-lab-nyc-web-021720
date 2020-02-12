@@ -25,6 +25,7 @@ describe "#load_library" do
     it "the keys inside the 'get_meaning' hash are the Japanese emoticons" do
       emoticons = ["☜(⌒▽⌒)☞", "(ΘεΘ;)", "(￣ー￣)", "o_O", "(^_-)"]
       emoticons.each do |japanese_emoticon|
+      
         if result['get_meaning'] then
           expect(result['get_meaning'].keys).to include(japanese_emoticon)
         else
@@ -37,7 +38,7 @@ describe "#load_library" do
       emoticons = {
         "☜(⌒▽⌒)☞" => "angel",
         "(ΘεΘ;)" => "bored",
-        "o_O" => "surprised", 
+        "o_O" => "surprised",
         "(^_-)" => "wink"
       }
       emoticons.each do |japanese_emoticon,meaning|
