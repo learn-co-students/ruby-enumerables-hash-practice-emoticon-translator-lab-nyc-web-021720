@@ -33,7 +33,6 @@ end
 #
 def get_english_meaning(path, japanese_emo)
   emoticons = load_library(path)
-  
   match = emoticons["get_meaning"][japanese_emo]
   return match ? match : APOLOGY
 end
